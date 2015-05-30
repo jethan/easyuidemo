@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>easyuidemo</display-name>
+	
+	<filter>
+		<filter-name>SetEncodingFilter</filter-name>
+		<filter-class>com.demo.filter.SetEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>  
+	    <filter-name>session-timeout</filter-name>  
+	    <filter-class>com.demo.filter.SessionFilter</filter-class>  
+    </filter>  
+    <filter-mapping>  
+	    <filter-name>session-timeout</filter-name>  
+	    <url-pattern>*.jsp</url-pattern>  
+    </filter-mapping> 
+    
+    <servlet>
+	    <description>
+		</description>
+		<display-name>StaffServlet</display-name>
+		<servlet-name>StaffServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.StaffServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>StaffServlet</servlet-name>
+		<url-pattern>/StaffServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>ConstantServlet</display-name>
+		<servlet-name>ConstantServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.ConstantServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConstantServlet</servlet-name>
+		<url-pattern>/ConstantServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>ProvinceServlet</display-name>
+		<servlet-name>ProvinceServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.ProvinceServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProvinceServlet</servlet-name>
+		<url-pattern>/ProvinceServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>CityServlet</display-name>
+		<servlet-name>CityServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.CityServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CityServlet</servlet-name>
+		<url-pattern>/CityServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>CountyServlet</display-name>
+		<servlet-name>CountyServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.CountyServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CountyServlet</servlet-name>
+		<url-pattern>/CountyServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdminServlet</display-name>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.AdminServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/AdminServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginServlet</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.LoginServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>DepartmentServlet</display-name>
+		<servlet-name>DepartmentServlet</servlet-name>
+		<servlet-class>
+		com.demo.action.DepartmentServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DepartmentServlet</servlet-name>
+		<url-pattern>/DepartmentServlet</url-pattern>
+	</servlet-mapping>
+	
+  <servlet>
+    <description>按部门统计员工数量</description>
+    <display-name>DeptStaffServlet</display-name>
+    <servlet-name>DeptStaffServlet</servlet-name>
+    <servlet-class>com.demo.action.DeptStaffServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>DeptStaffServlet</servlet-name>
+    <url-pattern>/DeptStaffServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>按部门统计男女员工数量</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeptStaffGenderServlet</servlet-name>
+    <servlet-class>com.demo.action.DeptStaffGenderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeptStaffGenderServlet</servlet-name>
+    <url-pattern>/DeptStaffGenderServlet</url-pattern>
+  </servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
