@@ -230,7 +230,7 @@ public class StaffDAO {
 	public List<Staff> getAllStaffs(int startIndex ,int endIndex)
 	{
 		_logger.info("查询所有未删除员工信息...");
-		return _getStaffsList("select U.*,ROWNUM RN from staffinfo U where ROWNUM <="+endIndex+" and ROWNUM >= "+startIndex);	
+		return _getStaffsList("select * from (select U.*,ROWNUM RN from staffinfo U where deleted = 0 and ROWNUM <="+endIndex+" ) WHERE RN >= "+startIndex);	
 	}
 	
 	/**
